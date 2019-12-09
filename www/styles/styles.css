@@ -208,7 +208,10 @@ label:hover {
   background: linear-gradient(to top, #fd0000 0%, #cedbe5 100%);
   border: 10em solid #bbb;
   box-shadow: 0 0 10em rgba(0, 0, 0, 0.6);
-  transform: translatez(2em)
+  transform: translatez(2em);
+
+  src:url('/musica/freddy-krueger-viene-por-ti-1.mp3');
+
 }
 
 .hammer {
@@ -471,7 +474,7 @@ label[class*="pass"]:after {
   content: "Has pasado a la sala de pensillvania!" !important;
   font-weight: bold;
   text-shadow: 0 0 0.6em #000;Chupasadflvás fskav a sflkadsjflbavf aonf1!
-  z-index: 99999;
+  z-index: 99;
   font-size: 60px;
   pointer-events: none;
   text-align: center;

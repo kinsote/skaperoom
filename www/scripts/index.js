@@ -7,3 +7,6 @@ function reproducirmusica() {
 var tocando = document.getElementById('musica');
 tocando.Play();
 }
+
+
+function floor() {}
