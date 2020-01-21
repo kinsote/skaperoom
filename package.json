@@ -1,18 +1,11 @@
 {
-  "name": "proyectoesacaperoom",
+  "name": "proyectoescaperoom",
   "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "browser-sync": "^2.26.7"
-  },
+  "description": "",
+  "main": "/front/src/nv1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server 'www' --files 'www'"
-
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "keywords": [],
-  "description": ""
+  "license": "ISC"
 }
