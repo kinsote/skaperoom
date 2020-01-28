@@ -2,7 +2,7 @@ import React from 'react';
 import './../css/nv2.css';
 import Textomove from './Textomove';
 
- function Nv2() {
+export default function Nv2() {
   return (
     <div className="Nv2">
       
@@ -64,7 +64,7 @@ import Textomove from './Textomove';
     </div>
     );
   }
-export default Nv2;
+
 
 
 
