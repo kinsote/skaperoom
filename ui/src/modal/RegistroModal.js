@@ -10,8 +10,12 @@ const useFormField = () => {
     return [value, e => setValue(e.target.value)]
 
 }
+               
 
 const RegistroModal = () => {
+    const dispatch = useDispatch()
+    const registro = (user) => dispatch({ type: 'registro', user })
+
     const [name, setName] = useFormField()
     const [birthday, setBirthday] = useFormField()
     const [password, setPassword] = useFormField()
@@ -55,7 +59,13 @@ const RegistroModal = () => {
         }
 
     }
-    const dispatch = useDispatch()
+    registro({
+        name,
+        password,
+        birthday,
+        email,
+        avatar
+    })
 
     
     return (
@@ -94,6 +104,7 @@ const RegistroModal = () => {
             {isError && <div>Error, please try again</div>}
         </form>
     )
+   
 }
 
 export default RegistroModal;

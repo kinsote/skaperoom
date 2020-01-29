@@ -2,11 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import logo from '../assets/images/logo.png';
 import '../assets/css/Home_styles.css'
+//import { useHistory } from "react-router-dom";
 
 
 const HeaderUser = () => {
 
     const dispatch = useDispatch()
+    //const history = useHistory()
     const handleLogout = () => dispatch({ type: 'logout' })
 
     return (
@@ -25,6 +27,7 @@ const HeaderUser = () => {
                         </li>
                         <li>
                             <button onClick={handleLogout} className="nav-item" >Logout</button>
+                            {/* {history.push('/')} */}
                         </li>
 
                     </ul>
