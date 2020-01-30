@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import logo from '../assets/images/logo.png';
-import '../assets/css/Home_styles.css'
-//import { useHistory } from "react-router-dom";
-
+import '../assets/css/Header.css'
+import { NavLink } from 'react-router-dom'
 
 const HeaderUser = () => {
 
     const dispatch = useDispatch()
-    //const history = useHistory()
     const handleLogout = () => dispatch({ type: 'logout' })
+    const userData = localStorage.getItem('userData');
+    const user = JSON.parse(userData);
 
     return (
 
@@ -20,18 +20,12 @@ const HeaderUser = () => {
                     <span id="brand"><strong>ZaKin Boss</strong></span>
                 </div>
 
-                <nav id="menu">
-                    <ul>
-                        <li>
-                            {/* <button onClick={handleRegistro} className="nav-item" >Registro</button> */}
-                        </li>
-                        <li>
-                            <button onClick={handleLogout} className="nav-item" >Logout</button>
-                            {/* {history.push('/')} */}
-                        </li>
+                <nav  className="nav">
+                    <img src={user.avatar} className="nav-avatar" alt="Avatar" />
 
-                    </ul>
+                    <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
 
+                    <NavLink to="/user" className="nav-item" >{user.name}</NavLink>
                 </nav>
                 <div className="clearfix"></div>
 
@@ -39,6 +33,5 @@ const HeaderUser = () => {
         </header>
     )
 };
-
 
 export default HeaderUser;

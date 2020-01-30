@@ -52,6 +52,7 @@ app.post('/login', function (req, res, next) {
   const name = req.body.name;
   const password = req.body.password;
   let id;
+  let userData;
   const createToken = () => {    
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
   }
@@ -59,7 +60,7 @@ app.post('/login', function (req, res, next) {
   stPg.getUserByname(name)
     .then(function(user) {
       console.log(user);
-      id = user.id;
+      userData = user;
       return bcrypt.compare(password, user.password);
     })
     .then(function(samePassword) {
@@ -73,8 +74,9 @@ app.post('/login', function (req, res, next) {
           expires: moment().add(5, 'h'),
           rol: 'user'
         }
-
-        res.json({token, id});
+        
+        delete userData.password;
+        res.json({token, userData});
     })
     .catch(function(error){
         console.log("Error authenticating user: ");

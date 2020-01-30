@@ -1,26 +1,25 @@
 export const quizData = [
   {
     id: 0,
-    question: ` What is the Capital Of India ?`,
-    options: [`New Delhi`, `Mumbai`, `Kolkatta`],
-    answer: `New Delhi`
-  },
+    question: ` Donde se desarrolla zombies Nazis ?`,
+    options: [`Belgica`, `Alemania`, `francia`],
+    answer: `Alemania`  },
   {
     id: 1,
-    question: `Who is the CEO of Tesla Motors?`,
-    options: [`Bill Gates`, `Steve Jobs`, `Elon Musk`],
-    answer: `Elon Musk`
+    question: `Que actor hacia de si mismo en bienvenidos a Zombieland?`,
+    options: [`Bill Murray`, `Woody Harrelson`, `Elon Musk`],
+    answer: `Bill Murray`
   },
   {
     id: 3,
-    question: `Name World's Richest Man?`,
-    options: [`Jeff Bezo`, `Bill Gates`, `Mark Zuckerberg`],
-    answer: `Jeff Bezo`
+    question: `De que año es Zombie el regreso de los Muertos Vivientes?`,
+    options: [`1973`, `1978`, `1983`],
+    answer: ` 1978`
   },
   {
     id: 4,
-    question: `World's Longest River?`,
-    options: [`River Nile`, `River Amazon`, `River Godavari`],
-    answer: `River Nile`
+    question: `cudsoai?`,
+    options: [`ds`, `dw`, `tt`],
+    answer: `dw`
   }
 ];

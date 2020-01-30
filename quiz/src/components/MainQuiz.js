@@ -70,9 +70,9 @@ class MainQuiz extends React.Component {
     if (isEnd) {
       return (
         <div className="result">
-          <h3>Game Over your Final score is {this.state.score} points </h3>
+          <h3>Tu puntuacion final es... {this.state.score} points </h3>
           <p>
-            The correct answer's for the questions was
+           Las opciones correctas eran las siguientes:
             <ul>
               {quizData.map((item, index) => (
                 <li className="ui floating message options" key={index}>
