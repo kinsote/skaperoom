@@ -11,7 +11,6 @@ const LoginModal = () => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
 
-
   const history = useHistory()
   const [isError, setError] = useState(false)
 
@@ -28,14 +27,15 @@ const LoginModal = () => {
         body: JSON.stringify(user),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': localStorage.getItem('token') // usuario.token
+          //'Authorization': localStorage.getItem('token') // usuario.token
         }
       })
       const data = await ret.json()
       
-      localStorage.setItem('token', data.token) // dispatch('token', data.token)
-      localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
-      
+      //localStorage.setItem('token', data.token) // dispatch('token', data.token)
+      //localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
+      dispatch({ type: 'login', user: data })
+
       handleClose()
       history.push(`/home`)
       
@@ -62,9 +62,9 @@ const LoginModal = () => {
 
   return (
 
-    <form className="container" onSubmit={handleSubmit}>
+    <form className="contain" onSubmit={handleSubmit}>
 
-      <div className="container-login">
+      <div className="contain-login">
 
         <h1>login</h1>
 

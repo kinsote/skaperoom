@@ -24,7 +24,7 @@ const RegistroModal = () => {
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
    
-    //const usuario = useSelector(s => s.user) 
+    //const user = useSelector(s => s.user) 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
@@ -39,12 +39,12 @@ const RegistroModal = () => {
                 body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token') //usuario.token
+                    //'Authorization': localStorage.getItem('token') //usuario.token
                 }
             })
             const data = await ret.json();
             console.log('DATA', data);
-
+            dispatch({ type: 'registro', user: data })
             history.push(`/home`)
             handleClose()
             if (data.success) {
@@ -69,9 +69,9 @@ const RegistroModal = () => {
 
 
     return (
-        <form className="container" onSubmit={handleSubmit}>
+        <form className="contain" onSubmit={handleSubmit}>
 
-            <div className="container-registro">
+            <div className="contain-registro">
 
                 <h1>Registro</h1>
 
