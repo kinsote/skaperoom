@@ -2,14 +2,15 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import logo from '../assets/images/logo.png';
 import '../assets/css/Header.css'
-import { NavLink } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
 
 const HeaderUser = () => {
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const handleLogout = () => dispatch({ type: 'logout' })
-    const userData = localStorage.getItem('userData');
-    const user = JSON.parse(userData);
+    history.push('/')
 
     return (
 
@@ -20,12 +21,15 @@ const HeaderUser = () => {
                     <span id="brand"><strong>ZaKin Boss</strong></span>
                 </div>
 
-                <nav  className="nav">
-                    <img src={user.avatar} className="nav-avatar" alt="Avatar" />
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <button onClick={handleLogout} className="nav-item" >Logout</button>
 
-                    <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
+                        </li>
 
-                    <NavLink to="/user" className="nav-item" >{user.name}</NavLink>
+                    </ul>
+
                 </nav>
                 <div className="clearfix"></div>
 
@@ -33,5 +37,6 @@ const HeaderUser = () => {
         </header>
     )
 };
+
 
 export default HeaderUser;

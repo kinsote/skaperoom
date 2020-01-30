@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; //, useEffect 
 import { useHistory } from "react-router-dom";
 import '../assets/css/Modals.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux' //, useSelector
 import { Link } from 'react-router-dom'
 
 
 const useFormField = () => {
     const [value, setValue] = useState('')
     return [value, e => setValue(e.target.value)]
-
 }
-               
 
 const RegistroModal = () => {
     const dispatch = useDispatch()
@@ -26,7 +24,7 @@ const RegistroModal = () => {
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
 
-    const handleSubmit = async (e) => {        
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
         console.log('SUBMIT', user);
@@ -38,17 +36,17 @@ const RegistroModal = () => {
                 body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token') 
+                    'Authorization': localStorage.getItem('token')
                 }
             })
             const data = await ret.json();
             console.log('DATA', data);
-            
+
             history.push(`/home`)
             handleClose()
-            if (data.success) {                
+            if (data.success) {
                 console.log('OK, USUARIO GUARDADO');
-                
+
             } else {
                 setError(true)
             }
@@ -60,14 +58,13 @@ const RegistroModal = () => {
 
     }
     registro({
-        name,
-        password,
+        name,       
         birthday,
         email,
-        avatar
+        avatar        
     })
 
-    
+
     return (
         <form className="container" onSubmit={handleSubmit}>
 
@@ -83,18 +80,18 @@ const RegistroModal = () => {
                     </label>
 
                     <label>
-                        F.nacimiento: <br /><input name="birthday" type="date" required value={birthday} onChange={setBirthday} placeholder="Fecha de nacimiento" />
+                        Contraseña: <br /><input name="password" type="password" required value={password} onChange={setPassword} placeholder="Contraseña" />
                     </label>
 
                     <label>
-                        Contraseña: <br /><input name="password" type="password" required value={password} onChange={setPassword} placeholder="Contraseña" />
-                    </label>
+                        F.nacimiento: <br /><input name="birthday" type="date" required value={birthday} onChange={setBirthday} placeholder="Fecha de nacimiento" />
+                    </label>                  
 
                     <label>
                         Email: <br /><input name="email" type="email" required value={email} onChange={setEmail} placeholder="Correo" />
                     </label>
                     <label>
-                        Avatar:<br /><input name="avatar" type="url" required value={avatar} onChange={setAvatar} placeholder="Avatar"/>
+                        Avatar:<br /><input name="avatar" type="url" required value={avatar} onChange={setAvatar} placeholder="Avatar" />
                     </label>
 
                     <button type="submit" className="button-modal" > Registrarse </button>
@@ -104,7 +101,7 @@ const RegistroModal = () => {
             {isError && <div>Error, please try again</div>}
         </form>
     )
-   
+
 }
 
 export default RegistroModal;
