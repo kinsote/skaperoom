@@ -18,7 +18,7 @@ import './../css/nv2.css';
         <input type="checkbox" id="pass_1" />
         <input type="checkbox" id="pass_2" />
         <input type="checkbox" id="pass_3" />
-        <input type="checkbox" id="pass_4" />
+        
         <input type="checkbox" id="pass_5" />
         <input type="checkbox" id="box_open" />
         <input type="checkbox" id="key" />
