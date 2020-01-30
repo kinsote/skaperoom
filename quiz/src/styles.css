@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  color: #f1f2f6;
+}
+body {
+  font-size: 1.2rem;
+  color: black;
+  background-color: black;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.options {
+  cursor: pointer;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.selected {
+  background: red;
+}
+
+ul {
+  list-style-type: none;
+}
