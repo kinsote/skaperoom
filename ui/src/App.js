@@ -8,6 +8,7 @@ import Inicio from './Inicio';
 import Home from './Home';
 import Error from './components/Error'
 import User from './components/User';
+import Nv2 from './nv2/components/Nv2'
 
 const store = createStore(rootReducer, load(), applyMiddleware(save()))
 // const Content = () => {  
@@ -17,28 +18,30 @@ const store = createStore(rootReducer, load(), applyMiddleware(save()))
 //       {!user && <Inicio />}
 //     </div>
 //   )
-//}
+// }
 
 const App = () => {
   return (
     < Provider store={store} >
       <Router>
-      {/* <Content /> */}
+        {/* <Content /> */}
         <Switch>
-               
-            <Route exact path="/">
-              <Inicio />
-            </Route>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/user">
-              <User />
-            </Route>            
-            <Route path="*" component={Error} />         
+          <Route exact path="/">
+            <Inicio />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/user">
+            <User />
+          </Route>
+          <Route exact path="/nv2">
+            <Nv2 />
+          </Route>
+          <Route path="*" component={Error} />
         </Switch>
       </Router>
-     
+
     </Provider >
   )
 }

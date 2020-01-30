@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux'; //, useSelector
 import { useHistory } from "react-router-dom";
 import '../assets/css/Modals.css';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,7 @@ const LoginModal = () => {
   const [isError, setError] = useState(false)
 
   const handleClose = () => dispatch({ type: 'hideModal' })
+  //const usuario = useSelector(s => s.user) 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -27,20 +28,20 @@ const LoginModal = () => {
         body: JSON.stringify(user),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': localStorage.getItem('token')
+          'Authorization': localStorage.getItem('token') // usuario.token
         }
       })
       const data = await ret.json()
       
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('userData', JSON.stringify(data.userData))
+      localStorage.setItem('token', data.token) // dispatch('token', data.token)
+      localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
       
       handleClose()
       history.push(`/home`)
       
       if (data.success) {
         // ok! todo bien
-        localStorage.setItem('token', data.token)
+        //localStorage.setItem('token', data.token)
         //data.userData
 
         handleClose()

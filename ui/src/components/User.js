@@ -36,12 +36,17 @@ const User = () => {
 
             <div className="contenedor">
                 <h2>Tu perfil:</h2>
-                <span className="datos">
+
+                <div className="grid-container">
+                    
                     <div className="avatar">Avatar: <img src={user.avatar} alt="Avatar" /></div>
-                    <div className="user">Usuario: {user.name}</div>
-                    <div className="cumpleaños">Cumpleaños: {user.birthday}</div>
-                    <div className="email">Email: {user.email}</div>
-                </span>
+
+                    <span className="datos">
+                        <div className="user">Usuario: {user.name}</div>
+                        <div className="cumpleaños">Cumpleaños: {user.birthday}</div>
+                        <div className="email">Email: {user.email}</div>
+                    </span>
+                </div>
             </div>
         </>
     )

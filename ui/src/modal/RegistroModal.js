@@ -23,20 +23,23 @@ const RegistroModal = () => {
     const history = useHistory()
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
-
+   
+    //const usuario = useSelector(s => s.user) 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
         console.log('SUBMIT', user);
+        
 
         setError(false)
+        
         try {
             const ret = await fetch('http://localhost:8080/registro', {
                 method: 'POST',
                 body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    'Authorization': localStorage.getItem('token') //usuario.token
                 }
             })
             const data = await ret.json();
