@@ -23,16 +23,14 @@ const RegistroModal = () => {
     const history = useHistory()
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
-   
+
     //const user = useSelector(s => s.user) 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
         console.log('SUBMIT', user);
-        
 
         setError(false)
-        
         try {
             const ret = await fetch('http://localhost:8080/registro', {
                 method: 'POST',
@@ -47,6 +45,7 @@ const RegistroModal = () => {
             dispatch({ type: 'registro', user: data })
             history.push(`/home`)
             handleClose()
+
             if (data.success) {
                 console.log('OK, USUARIO GUARDADO');
 
@@ -61,10 +60,10 @@ const RegistroModal = () => {
 
     }
     registro({
-        name,       
+        name,
         birthday,
         email,
-        avatar        
+        avatar
     })
 
 
@@ -88,7 +87,7 @@ const RegistroModal = () => {
 
                     <label>
                         F.nacimiento: <br /><input name="birthday" type="date" required value={birthday} onChange={setBirthday} placeholder="Fecha de nacimiento" />
-                    </label>                  
+                    </label>
 
                     <label>
                         Email: <br /><input name="email" type="email" required value={email} onChange={setEmail} placeholder="Correo" />

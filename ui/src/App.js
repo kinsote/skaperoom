@@ -9,6 +9,7 @@ import Home from './Home';
 import Error from './components/Error'
 import User from './components/User';
 import Nv2 from './nv2/components/Nv2'
+import Edituser from './components/Edituser';
 
 const store = createStore(rootReducer, load(), applyMiddleware(save()))
 // const Content = () => {  
@@ -37,6 +38,9 @@ const App = () => {
           </Route>
           <Route exact path="/nv2">
             <Nv2 />
+          </Route>
+          <Route exact path="/edit">
+            <Edituser />
           </Route>
           <Route path="*" component={Error} />
         </Switch>
