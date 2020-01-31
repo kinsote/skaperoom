@@ -30,7 +30,7 @@ const User = () => {
                     <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
 
                     <NavLink to="/home" id="button-home" className="nav-item">Home</NavLink>
-                    <NavLink to="/user/edit" id="button-home" className="nav-item">Edit</NavLink>
+                    <NavLink to="/user/edit" id="button-home" className="nav-item">Editar</NavLink>
 
                 </nav>
             </header>

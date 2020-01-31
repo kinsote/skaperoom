@@ -1,0 +1,43 @@
+
+.edituser{
+    color: white;
+    display: block;
+    
+
+}
+.tituloedit{
+    text-align: center;
+    font-size: 35px;
+}
+
+label{
+    font-size: 35px;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.button-edit{
+    display: block;  
+    padding: 2.5px 10px;
+    color: rgb(83, 78, 78);
+    font-size: 1.5em;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: capitalize;    
+    border: 1px solid rgb(66, 57, 57); 
+    border-radius: 6px; 
+    background-color: rgb(3, 3, 3);    
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 30px ;
+    text-decoration: none; 
+}
+
+.button-edit:hover{
+    color: rgb(58, 3, 2); 
+    font-size: 1.8em;  
+}

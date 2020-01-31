@@ -9,7 +9,7 @@ import Home from './Home';
 import Error from './components/Error'
 import User from './components/User';
 import Juego from './Juego'
-import Edituser from './components/Edituser';
+import Edit from './Edituser';
 
 const store = createStore(rootReducer, load(), applyMiddleware(save()))
 
@@ -39,7 +39,7 @@ const App = () => {
           </Route>
 
           <Route exact path="/user/edit">
-            <Edituser />
+            <Edit />
           </Route>
 
           <Route path="*" component={Error} />

@@ -1,8 +1,9 @@
 import React from 'react';
 import HeaderGame from './components/HeaderGame';
-import Game1 from './components/Game1';
+import Editar from './components/Editar';
 
-const juego = () => {
+
+const Edit = () => {
 
     return (
         <div className="home">
@@ -10,9 +11,9 @@ const juego = () => {
                 <HeaderGame />
             </header>
             <section>
-                <Game1 />
+                <Editar />                
             </section>
         </div>
     )
 }
-export default juego
+export default Edit;
