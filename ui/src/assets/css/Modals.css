@@ -1,5 +1,5 @@
 
-.container {
+.contain {
     
     position: absolute;
     top: 0;
@@ -13,7 +13,7 @@
     justify-content: center;     
 }
 
-.container-registro {
+.contain-registro {
 
     position: absolute;    
     background: #333333;   
@@ -23,7 +23,7 @@
     min-height: 630px;   
 }
 
-.container-login {
+.contain-login {
 
     position: absolute;    
     background: #333333;   
@@ -47,7 +47,7 @@
     text-decoration: none;
 } 
 
-.container h1{    
+.contain h1{    
     padding: 20px;
     font-size: 45px;   
     text-align: center;
@@ -64,7 +64,7 @@
     color: #999696; 
 }
 
- .form-modal input{
+.form-modal input{
     text-align: center;
     font-size: 20px;
     color: #999696; 
@@ -95,13 +95,12 @@
     margin-left: auto;
     margin-top: 10px;
     margin-bottom: 30px ;
-    text-decoration: none;
-       
+    text-decoration: none;       
 }
 
 .button-modal:hover{
     color: rgb(58, 3, 2); 
-    font-size: 1.8em;   
+    font-size: 1.8em;  
 
 }
 

@@ -6,26 +6,33 @@
 }
 
 .datos{
-
+    grid-area: datos;
     font-size: 55px;
     color: white;
     font-weight: 600;    
 } 
-
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "avatar avatar datos datos" "avatar avatar datos datos" "avatar avatar datos datos";
+}
 .user{
-    float: right;
+    
     padding: 20px;
 }
 .cumpleaños{
     padding: 20px;
-    float: right;
 }
 .email{
-    padding: 20px;
-    float: right;
+    padding: 20px;   
 }
 .avatar{
-    float: left;    
+    margin-left: 100px;
+    font-size: 55px;
+    color: white;
+    font-weight: 600; 
+    grid-area: avatar;      
 }
 .avatar img{
     

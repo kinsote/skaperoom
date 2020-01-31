@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';//
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import '../assets/css/Header.css';
@@ -7,8 +7,8 @@ import '../assets/css/User.css';
 
 const User = () => {
 
-    const userData = localStorage.getItem('userData');
-    const user = JSON.parse(userData);
+   
+    const user = useSelector(s=>s.user)
     console.log("USER DATA", user)
 
     const dispatch = useDispatch()
@@ -30,18 +30,24 @@ const User = () => {
                     <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
 
                     <NavLink to="/home" id="button-home" className="nav-item">Home</NavLink>
+                    <NavLink to="/edituser" id="button-home" className="nav-item">Edit</NavLink>
 
                 </nav>
             </header>
 
             <div className="contenedor">
                 <h2>Tu perfil:</h2>
-                <span className="datos">
+
+                <div className="grid-container">
+                    
                     <div className="avatar">Avatar: <img src={user.avatar} alt="Avatar" /></div>
-                    <div className="user">Usuario: {user.name}</div>
-                    <div className="cumpleaños">Cumpleaños: {user.birthday}</div>
-                    <div className="email">Email: {user.email}</div>
-                </span>
+
+                    <span className="datos">
+                        <div className="user">Usuario: {user.name}</div>
+                        <div className="cumpleaños">Cumpleaños: {user.birthday}</div>
+                        <div className="email">Email: {user.email}</div>
+                    </span>
+                </div>
             </div>
         </>
     )

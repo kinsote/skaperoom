@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import logo from '../assets/images/logo.png';
 import '../assets/css/Header.css'
 import { NavLink } from 'react-router-dom'
@@ -8,9 +8,7 @@ const HeaderUser = () => {
 
     const dispatch = useDispatch()
     const handleLogout = () => dispatch({ type: 'logout' })
-    const userData = localStorage.getItem('userData');
-    const user = JSON.parse(userData);
-
+    const user = useSelector(s=>s.user)
     return (
 
         <header id="header">

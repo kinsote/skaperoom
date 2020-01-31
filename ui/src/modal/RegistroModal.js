@@ -24,6 +24,7 @@ const RegistroModal = () => {
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
 
+    //const user = useSelector(s => s.user) 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
@@ -36,14 +37,15 @@ const RegistroModal = () => {
                 body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    //'Authorization': localStorage.getItem('token') //usuario.token
                 }
             })
             const data = await ret.json();
             console.log('DATA', data);
-
+            dispatch({ type: 'registro', user: data })
             history.push(`/home`)
             handleClose()
+
             if (data.success) {
                 console.log('OK, USUARIO GUARDADO');
 
@@ -58,17 +60,17 @@ const RegistroModal = () => {
 
     }
     registro({
-        name,       
+        name,
         birthday,
         email,
-        avatar        
+        avatar
     })
 
 
     return (
-        <form className="container" onSubmit={handleSubmit}>
+        <form className="contain" onSubmit={handleSubmit}>
 
-            <div className="container-registro">
+            <div className="contain-registro">
 
                 <h1>Registro</h1>
 
@@ -85,7 +87,7 @@ const RegistroModal = () => {
 
                     <label>
                         F.nacimiento: <br /><input name="birthday" type="date" required value={birthday} onChange={setBirthday} placeholder="Fecha de nacimiento" />
-                    </label>                  
+                    </label>
 
                     <label>
                         Email: <br /><input name="email" type="email" required value={email} onChange={setEmail} placeholder="Correo" />
