@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oregano&display=swap');
 
-.Nv2 h1.title{
+ .Nv2 h1.title{
   text-align: center;
   font-family: Oregano;
   color: #bbb;
@@ -21,10 +21,7 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-* {
-    box-sizing: border-box;
-  transform-style: preserve-3d;
-}
+
 .Nv2 .screen div,.room label {
     position: absolute;
     display: block;

@@ -1,17 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import logo from '../assets/images/logo.png';
 import '../assets/css/Header.css'
-import { useHistory } from "react-router-dom";
-
+import { NavLink } from 'react-router-dom'
 
 const HeaderUser = () => {
 
     const dispatch = useDispatch()
-    const history = useHistory()
     const handleLogout = () => dispatch({ type: 'logout' })
-    history.push('/')
-
+    const user = useSelector(s=>s.user)
     return (
 
         <header id="header">
@@ -21,14 +18,11 @@ const HeaderUser = () => {
                     <span id="brand"><strong>ZaKin Boss</strong></span>
                 </div>
 
-                <nav id="menu">
-                    <ul>
-                        <li>
-                            <button onClick={handleLogout} className="nav-item" >Logout</button>
+                <nav  className="nav">
+                    <img src={user.avatar} className="nav-avatar" alt="Avatar" />
 
-                        </li>
-
-                    </ul>
+                    <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
+                    <NavLink to="/home" id="button-home" className="nav-item">Home</NavLink>
 
                 </nav>
                 <div className="clearfix"></div>
@@ -37,6 +31,5 @@ const HeaderUser = () => {
         </header>
     )
 };
-
 
 export default HeaderUser;

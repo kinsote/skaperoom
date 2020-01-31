@@ -1,16 +1,16 @@
 import React from 'react';
-//import './../css/nv2.css';
+import './../css/nv2.css';
 
- function Nv2() {
+
+function Nv2() {
+
   return (
     <div className="Nv2">
       <h1 className="title"> Nivel 2 </h1>
-      
-
       <div className="root">  <input type="radio" name="vista" id="left" />
         <input type="radio" name="vista" id="center" defaultChecked />
-        <input type="radio" name="vista" id="right" />   
-        <input type="radio" name="vista" id="box" />   
+        <input type="radio" name="vista" id="right" />
+        <input type="radio" name="vista" id="box" />
         <input type="radio" name="vista" id="door" />
         <input type="checkbox" id="luz" />
         <input type="checkbox" id="cuadro" />
@@ -40,12 +40,12 @@ import React from 'react';
                 <label className="key" htmlFor="key" />
               </label>
               <label className="left" htmlFor="left"> </label>
-              <label className="luz" htmlFor="luz" /> 
+              <label className="luz" htmlFor="luz" />
             </div>
             <div className="pared_front">
               <label className="center" htmlFor="center" />
               <label className="hammer" htmlFor="hammer" />
-              <label className="door" htmlFor="door"> 
+              <label className="door" htmlFor="door">
                 <label className="cerradura" htmlFor="cerradura" />
               </label>
             </div>
@@ -54,13 +54,15 @@ import React from 'react';
               <label className="cuadro" htmlFor="cuadro"> </label>
             </div>
             <div className="floor" />
-            
+
           </div>
         </div>
       </div>
     </div>
-    );
-  }
+
+  );
+
+}
 export default Nv2;
 
 

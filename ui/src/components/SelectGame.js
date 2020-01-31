@@ -1,15 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
-//import '../assets/css/Home_styles.css'
+import { NavLink } from 'react-router-dom';
+import {game1} from '../assets/images/game1.jpg';
+import '../assets/css/Inicio.css';
+
+
 
 const SelectGame = () => {
 
     return(
-       <main className="main-select">
-            <h1>selecciona juego</h1>
-            <NavLink to="/Nv2" className="nav-item" >Game</NavLink>
+       <div className="main-select">
+            <h1 className="select-game">selecciona juego</h1>
 
-       </main>
+            <img src={game1} alt="juego1" className="juego1" />
+
+            <NavLink to="/home/game" className="boton-game" >Game</NavLink>
+
+       </div>
        
     )
 }
