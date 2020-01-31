@@ -54,6 +54,8 @@ import './../css/nv2.css';
               <label className="cuadro" htmlFor="cuadro"> </label>
             </div>
             <div className="floor" />
+
+            
             
           </div>
         </div>
@@ -61,6 +63,15 @@ import './../css/nv2.css';
     </div>
     );
   }
+
+
+
+
+
+
+
+
+  
 export default Nv2;
 
 

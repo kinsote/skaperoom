@@ -1,6 +1,14 @@
 import React from "react";
 import { quizData } from "./quizData";
 
+
+
+
+function Temporizador (){
+  
+
+}
+
 class MainQuiz extends React.Component {
   state = {
     currentQuestion: 0,
