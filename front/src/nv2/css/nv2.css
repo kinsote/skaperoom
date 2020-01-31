@@ -7,9 +7,12 @@
   font-family: Oregano;
   color: #bbb;
 }
+h1{
+  color: #bbb;
+  }
    html{
-  background-color: black;
-}
+     background-color: black;
+  }
 
 .root>input{
   display:none
@@ -48,11 +51,11 @@ button:focus {
     box-shadow: 0 0 10em #aaa;
     height: 250em;
     margin:  auto;
-    border: solid 4px #000;
+    border: solid 4px rgb(0, 0, 0);
     overflow: hidden;
     perspective-origin: center;
     perspective: 370em;
-    background: #cd4640;
+    background: #000000;
   
 }
 .Nv2 .room {
@@ -82,13 +85,13 @@ button:focus {
     background-size: 20% auto;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
-    background-color: #ffffff;
+    background-color: #867d7d;
     transform: rotatex(90deg) translatez(-100em);
     
 }
 .Nv2 .pared_left,.pared_right,.pared_front,.front_floor {
-    background: linear-gradient(to bottom, #e66761 0%, #a66761 100%);
-    border: solid 4em #e62121;
+    background: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
+    border: solid 4em #3d3939;
     width: 400em;
     height: 400em;
 }
@@ -211,7 +214,7 @@ button:focus {
       width: 40em;
       height: 40em;
       left: 40em;
-      filter: drop-shadow(0 0 5em rgba(0,0,0,0.3));
+      filter: drop-shadow(0 0 5em rgba(26, 24, 24, 0.336));
       top: 20em;
       background-repeat: no-repeat;
       border: none;
@@ -219,7 +222,7 @@ button:focus {
       background-size: 100% auto;
 }
 .Nv2 .icon{
-    background-color: #aa0000;
+    background-color: #332e2e;
     border-radius: 50em;
     background-size: 70%;
     border: none;
@@ -400,6 +403,7 @@ label[class*="pass"]:after {
   to {pointer-events:none}
 }
 .Nv2 #box_open:checked~.screen:before {
+  font-family: Quantico;
     content: "¡ALARMA!";
     font-weight:bold;
     text-shadow: 0 0 0.6em #000;
@@ -412,6 +416,8 @@ label[class*="pass"]:after {
    display:block;
    pointer-events:all;
    background-color: rgba(255, 0, 0, 0.8);
+   background-image: url('https://media.giphy.com/media/WKqwoSJsHlxba/giphy.gif');
+   background-size: 2000px;
 }
 .Nv2 #cerradura:checked ~.screen:before {
     font-family: Quantico;
@@ -427,6 +433,9 @@ label[class*="pass"]:after {
    display:block;
    pointer-events:all;
    background-color: rgba(97, 236, 97, 0.8);
+   background-image: url('https://media1.tenor.com/images/725924609634fd309ce17710996ba6d9/tenor.gif?itemid=5722746');
+   background-size: 1200px;
+   background-position: 20% 30%;
 }
 .Nv2 #pass_1:checked + #pass_2:not(checked) +#pass_3:not(checked) +#pass_4:checked +#pass_5:not(:checked) ~ #box_open:checked ~ .screen:before {
  content:none;
