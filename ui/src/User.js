@@ -1,18 +1,28 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';//
+import React  from 'react'; //, { useState, useEffect }
+import { useDispatch, useSelector } from 'react-redux';// 
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/logo.png';
-import '../assets/css/Header.css';
-import '../assets/css/User.css';
+import logo from './assets/images/logo.png';
+import './assets/css/Header.css';
+import './assets/css/User.css';
+//import { useParams } from 'react-router-dom'
 
 const User = () => {
+    const dispatch = useDispatch()
+    const handleLogout = () => dispatch({ type: 'logout' })
+    // const { id } = useParams()
+
+    // const [ user, setUser ] = useState()
+    // useEffect(() => {
+    //     fetch('http://localhost:8080/users/' + id)
+    //         .then(r => r.json())
+    //         .then(data => setUser(data))
+    // }, [id])
+
+    // if (!user) return 'Loading...'
 
    
     const user = useSelector(s=>s.user)
-    console.log("USER DATA", user)
-
-    const dispatch = useDispatch()
-    const handleLogout = () => dispatch({ type: 'logout' })
+    console.log("USER DATA", user)    
 
     return (
 
