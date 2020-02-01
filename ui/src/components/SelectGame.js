@@ -1,22 +1,33 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {img} from '../assets/images/game1.jpg';
+import img from '../assets/images/game1.jpg';
 import '../assets/css/Inicio.css';
 
 
 
 const SelectGame = () => {
 
-    return(
-       <div className="main-select">
+    return (
+        <div className="main-select">
             <h1 className="select-game">selecciona juego</h1>
 
-            <img src={img} alt="juego1" className="juego1" />
+            <div className="conten-game">
+                
+                <div className="juego">
+                    <img src={img} alt="juego" id="juego1" />
+                    <NavLink to="/home/game" className="boton-game" >Game</NavLink>
+                </div>
+                <div className="juego">
+                    <img src={img} alt="juego" id="juego2" />
+                    <NavLink to="/home/game" className="boton-game" >Game</NavLink>
+                </div>
+                <div className="juego">
+                    <img src={img} alt="juego" id="juego3" />
+                    <NavLink to="/home/game" className="boton-game" >Game</NavLink>
+                </div>
+            </div>
+        </div>
 
-            <NavLink to="/home/game" className="boton-game" >Game</NavLink>
-
-       </div>
-       
     )
 }
 export default SelectGame

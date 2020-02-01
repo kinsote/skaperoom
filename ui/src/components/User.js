@@ -40,7 +40,7 @@ const User = () => {
 
                 <div className="grid-container">
                     
-                    <div className="avatar">Avatar: <img src={user.avatar} alt="Avatar" /></div>
+                    <div className="avatar"> <img src={user.avatar} alt="Avatar" /></div>
 
                     <span className="datos">
                         <div className="user">Usuario: {user.name}</div>

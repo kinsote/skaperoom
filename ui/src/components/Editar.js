@@ -69,26 +69,28 @@ const Editar = () => {
     }
 
     return (
-        <form onSubmit={handleSave}>
+        <form onSubmit={handleSave} className="conten-edit">
             <h1 className="tituloedit">Editar usuario {user.id}</h1>
             <div className="edituser" >
-                <label>
-                    Usuario: <br/><input value={user.name} onChange={handleField('name')} />
-                </label>
+                <div >
+                    <label className="label-edit">
+                        Usuario: <br /><input value={user.name} onChange={handleField('name')} />
+                    </label>
 
-                <label>
-                    Cumpleaños: <br/> <input value={user.birthday} onChange={handleField('cumpleaños')} />
-                </label>
+                    <label className="label-edit">
+                        Cumpleaños: <br /> <input value={user.birthday} onChange={handleField('cumpleaños')} />
+                    </label>
 
-                <label>
-                    Email: <br/> <input value={user.email} onChange={handleField('email')} />
-                </label>
+                    <label className="label-edit">
+                        Email: <br /> <input value={user.email} onChange={handleField('email')} />
+                    </label>
 
-                <label>
-                    Avatar: <br/> <input value={user.avatar} onChange={handleField('avatar')} />
-                </label>
+                    <label className="label-edit">
+                        Avatar: <br /> <input value={user.avatar} onChange={handleField('avatar')} />
+                    </label>
 
-                <button className="button-edit">Guardar</button>
+                    <button className="button-edit">Guardar</button>
+                </div>
             </div>
 
 
