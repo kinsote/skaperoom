@@ -2,6 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oregano&display=swap');
 
+.timer{
+  color: red;
+  padding: 20px;
+}
+
 .Nv2 h1.title{
   text-align: center;
   font-family: Oregano;

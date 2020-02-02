@@ -50,6 +50,7 @@ const LoginModal = () => {
         // setError(true)
       }
     } catch (err) {
+      alert('El usuario no esta registrado')
       console.warn('Error:', err)
       setError(true)
     }

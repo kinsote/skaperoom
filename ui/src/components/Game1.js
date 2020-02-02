@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/css/game1.css';
+import Timer from './Timer';
 
  function Game1() {
+   
   return (
     <div className="Nv2">
       <h1 className="title"> Nivel 2 </h1>
-      
-
+      <Timer />
       <div className="root">  <input type="radio" name="vista" id="left" />
         <input type="radio" name="vista" id="center" defaultChecked />
         <input type="radio" name="vista" id="right" />   
