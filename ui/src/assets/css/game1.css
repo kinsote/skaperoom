@@ -443,7 +443,7 @@ label[class*="pass"]:after {
  content:none;
 }
 .Nv2 #pass_1:checked + #pass_2:not(checked) +#pass_3:not(checked) +#pass_4:checked +#pass_5:not(:checked) ~ #box_open:checked ~ .screen .box_door{
- 
+  transform:translatex(-90%);
 }
 
 .Nv2 #pass_1:checked + #pass_2:not(checked) +#pass_3:not(checked) +#pass_4:checked +#pass_5:not(:checked) ~ #box_open:checked ~ .screen .box .key{
