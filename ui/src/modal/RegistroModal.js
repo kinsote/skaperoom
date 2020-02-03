@@ -53,6 +53,7 @@ const RegistroModal = () => {
                 setError(true)
             }
         } catch (err) {
+            alert('El usuario ya existe');
             console.warn('Error:', err)
             console.log('entra')
             setError(true)

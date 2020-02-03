@@ -41,15 +41,13 @@ const LoginModal = () => {
       
       if (data.success) {
         // ok! todo bien
-        //localStorage.setItem('token', data.token)
-        //data.userData
-
-        handleClose()
-        history.push(`/home`)
+        
+        //data.userData       
       } else {
         // setError(true)
       }
     } catch (err) {
+      alert('El usuario no esta registrado')
       console.warn('Error:', err)
       setError(true)
     }

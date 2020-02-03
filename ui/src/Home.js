@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderUser from './components/HeaderUser';
+import HeaderSelectGame from './components/HeaderSelectGame';
 import SelectGame from './components/SelectGame';
 
 const Perfil = () => {
@@ -7,7 +7,7 @@ const Perfil = () => {
     return (
         <div className="home">
             <header className="header">
-                <HeaderUser />
+                <HeaderSelectGame />
             </header>
             <section>
                 <SelectGame />

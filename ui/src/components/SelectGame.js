@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import img from '../assets/images/game1.jpg';
 import img2 from '../assets/images/game2.jpg';
+import img3 from '../assets/images/game3.jpg';
 import '../assets/css/Inicio.css';
 
 
@@ -23,8 +24,13 @@ const SelectGame = () => {
                     <NavLink to="/home/game" className="boton-game" >Scape</NavLink>
                 </div>
                 <div className="juego">
+<<<<<<< HEAD
                     <img src={img} alt="juego" id="juego3" />
                     <NavLink to="/home/game1" className="boton-game" >Game</NavLink>
+=======
+                    <img src={img3} alt="juego" id="juego3" />
+                    <NavLink to="/home/game3" className="boton-game" >Quiz2</NavLink>
+>>>>>>> 657e5eacfacfe9fc2c7c2afc4598a9d679090d52
                 </div>
             </div>
         </div>
