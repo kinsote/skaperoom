@@ -20,7 +20,6 @@ const HeaderUser = () => {
 
                 <nav  className="nav">
                     <img src={user.avatar} className="nav-avatar" alt="Avatar" />
-
                     <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
                     <NavLink to="/home" id="button-home" className="nav-item">Home</NavLink>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderGame from './components/HeaderGame';
 import MainQuiz from './components/MainQuiz';
 
-const Quiz1 = () => {
+const Game1 = () => {
 
     return (
         <div className="home">
@@ -15,4 +15,4 @@ const Quiz1 = () => {
         </div>
     )
 }
-export default Quiz1
+export default Game1

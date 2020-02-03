@@ -8,7 +8,7 @@ const HeaderUser = () => {
 
     const dispatch = useDispatch()
     const handleLogout = () => dispatch({ type: 'logout' })
-    const user = useSelector(s=>s.user)
+    const user = useSelector(s => s.user)
     return (
 
         <header id="header">
@@ -17,17 +17,15 @@ const HeaderUser = () => {
                     <img src={logo} className="app-logo" alt="logo" />
                     <span id="brand"><strong>ZaKin Boss</strong></span>
                 </div>
-
-                <nav  className="nav">
-                    <img src={user.avatar} className="nav-avatar" alt="Avatar" />
-
-                    <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
-
-                    <NavLink to="/user" className="nav-item" >{user.name}</NavLink>
-                </nav>
-                <div className="clearfix"></div>
-
             </div>
+            <nav className="nav">
+
+                <img src={user.avatar} className="nav-avatar" alt="Avatar" />
+                <NavLink to="/" onClick={handleLogout} className="nav-item" >Logout</NavLink>
+                <NavLink to="/home" id="button-home" className="nav-item">Home</NavLink>
+                <NavLink to="/user/edit" id="button-home" className="nav-item">Editar</NavLink>
+
+            </nav>
         </header>
     )
 };
