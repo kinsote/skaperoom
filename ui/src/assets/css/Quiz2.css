@@ -1,0 +1,14 @@
+.conten-quiz2{
+    text-align: center;
+    margin-top: 0px;
+    background-image: url('../images/fondo5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 87vh;
+}
+.h1-quiz2{
+    margin-top: 0px;
+    padding: 40px;
+    font-size: 45px;
+   color: aqua;
+}
