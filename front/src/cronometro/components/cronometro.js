@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Button} from './buton.js'
+import Game from './buton'
+
 export class Cronometro extends Component {
   constructor (){
     super();

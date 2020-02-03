@@ -4,7 +4,7 @@ import '../assets/css/game1.css';
  function Game1() {
   return (
     <div className="Nv2">
-      <h1 className="title"> Nivel 2 </h1>
+      <h1 className="title"> Nivel 1</h1>
       
 
       <div className="root">  <input type="radio" name="vista" id="left" />

@@ -1,10 +1,13 @@
 import React from 'react';
 import './../css/nv2.css';
+// import Cronometro from '../components/Cronometro';
 
  function Nv2() {
   return (
     <div className="Nv2">
       <h1 className="title"> Nivel 2 </h1>
+          
+
       
 
       <div className="root">  <input type="radio" name="vista" id="left" />

@@ -112,17 +112,17 @@ class MainQuiz extends React.Component {
             ))}
             {currentQuestion < quizData.length - 1 && (
               <button
-                className="ui inverted button"
+                className="buttonx"
                 disabled={this.state.disabled}
                 onClick={this.nextQuestionHandler}
               >
-                Next
+             Next
             </button>
             )}
             {/* //adding a finish button */}
             {currentQuestion === quizData.length - 1 && (
-              <button className="ui inverted button" onClick={this.finishHandler}>
-                Finish
+              <button className="buttonx" onClick={this.finishHandler}>
+                Finalizar
             </button>
             )}
           </div>

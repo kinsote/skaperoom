@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -63,7 +63,7 @@ app.post('/login', function (req, res, next) {
       userData = user;
       return bcrypt.compare(password, user.password);
     })
-    .then(function(samePassword) {
+    .then(function(samePassword) { 
         if(!samePassword) {
             res.status(403).send();
         }

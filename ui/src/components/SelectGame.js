@@ -19,12 +19,12 @@ const SelectGame = () => {
                     <NavLink to="/home/game2" className="boton-game" >Quiz</NavLink>
                 </div>
                 <div className="juego">
-                    <img src={img} alt="juego" id="juego2" />
+                    <img src='https://mouse.latercera.com/wp-content/uploads/2017/09/it-casa.jpg' alt="juego" id="juego2" />
                     <NavLink to="/home/game" className="boton-game" >Scape</NavLink>
                 </div>
                 <div className="juego">
                     <img src={img} alt="juego" id="juego3" />
-                    <NavLink to="/home/game" className="boton-game" >Game</NavLink>
+                    <NavLink to="/home/game1" className="boton-game" >Game</NavLink>
                 </div>
             </div>
         </div>
