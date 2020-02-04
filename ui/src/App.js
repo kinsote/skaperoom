@@ -38,6 +38,7 @@ const App = () => {
 
           <Route exact path="/home/game">
             <Juego />
+            
           </Route>
           <Route exact path="/home/game2">
             <Gameq1 />

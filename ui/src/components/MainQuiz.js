@@ -7,6 +7,7 @@ import '../assets/css/Quiz1.css'
 //function Temporizador (){}
 
 class MainQuiz extends React.Component {
+
   state = {
     currentQuestion: 0,
     myAnswer: null,

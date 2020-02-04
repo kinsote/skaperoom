@@ -5,7 +5,7 @@ export default function Game2() {
     return (
       <div className="Nv3">
         <h1 className="title"> Nivel 2 </h1>
-        
+    
   
         <div className="root">  <input type="radio" name="vista" id="left" />
           <input type="radio" name="vista" id="center" defaultChecked />

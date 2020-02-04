@@ -1,34 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../assets/css/game1.css';
-import Timer from './Timer';
+import Timer from './Timer'
 
  function Game1() {
-   
+  const [valor, setValor] = useState(7)
   return (
     <div className="Nv2">
- HEAD
+    
       <h1 className="title"> Nivel 1</h1>
       
-
-      <h1 className="title"> Nivel 2 </h1>
-      <Timer />
+  
+      
+      <Timer valor={valor} setValor={setValor} />
+ 
+ 
  
       <div className="root">  <input type="radio" name="vista" id="left" />
         <input type="radio" name="vista" id="center" defaultChecked />
         <input type="radio" name="vista" id="right" />   
         <input type="radio" name="vista" id="box" />   
         <input type="radio" name="vista" id="door" />
-        <input type="checkbox" id="luz" />
-        <input type="checkbox" id="cuadro" />
-        <input type="checkbox" id="hammer" />
-        <input type="checkbox" id="pass_1" />
-        <input type="checkbox" id="pass_2" />
-        <input type="checkbox" id="pass_3" />
-        <input type="checkbox" id="pass_4" />
-        <input type="checkbox" id="pass_5" />
-        <input type="checkbox" id="box_open" />
-        <input type="checkbox" id="key" />
-        <input type="checkbox" id="cerradura" />
+        <input type="checkbox" id="luz" checked={valor === 0} />
+        <input type="checkbox" id="cuadro" checked={valor === 0} />
+        <input type="checkbox" id="hammer" checked={valor === 44} />
+        <input type="checkbox" id="pass_1" checked={valor === 0} />
+        <input type="checkbox" id="pass_2" checked={valor === 0} />
+        <input type="checkbox" id="pass_3" checked={valor === 0} />
+        <input type="checkbox" id="pass_4" checked={valor === 0} />
+        <input type="checkbox" id="pass_5" checked={valor === 0} />
+        <input type="checkbox" id="box_open" cheked={valor === 0}/>
+        <input type="checkbox" id="key" checked={valor === 44} />
+        <input type="checkbox" id="cerradura" checked={valor === 44} />
         <div className="screen">
           <input type="text" className="icon hammer" autoComplete="off" />
           <input type="text" className="icon key" autoComplete="off" />
