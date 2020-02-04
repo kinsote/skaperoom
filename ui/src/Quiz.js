@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderGame from './components/HeaderGame';
-import MainQuiz from './components/MainQuiz';
+import MainQuiz from './Quiz1/MainQuiz';
 
 const Game1 = () => {
 

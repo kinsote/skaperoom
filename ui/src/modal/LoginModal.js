@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch} from 'react-redux'; //, useSelector
+import { useDispatch} from 'react-redux'; 
 import { useHistory } from "react-router-dom";
 import '../assets/css/Modals.css';
 import { Link } from 'react-router-dom';
@@ -14,13 +14,15 @@ const LoginModal = () => {
   const [avatar] = useState('')
   const [birthday] = useState('')
 
+  
+
   const history = useHistory()
   const [isError, setError] = useState(false)
 
   const handleClose = () => dispatch({ type: 'hideModal' })
-  //const usuario = useSelector(s => s.user) 
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e) => {    
     e.preventDefault()
     const user = { name, password }
     setError(false)
@@ -33,10 +35,14 @@ const LoginModal = () => {
           //'Authorization': localStorage.getItem('token') // usuario.token
         }
       })
-      const data = await ret.json()      
-      //localStorage.setItem('token', data.token) // dispatch('token', data.token)
+      const data = await ret.json()
+      console.log("USER LOGUIN", data);
+      
+      localStorage.setItem('user', JSON.stringify(data)) // dispatch('token', data.token)
       //localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
-      dispatch({ type: 'login', user: data })
+    
+      
+      dispatch({ type: 'registro', user: data })
 
       handleClose()
       history.push(`/home`)
@@ -52,13 +58,16 @@ const LoginModal = () => {
       alert('El usuario no esta registrado')
       console.warn('Error:', err)
       setError(true)
-    } 
+    }
+    
 
     Login({
-      name,
-      email,
-      avatar,
-      birthday     
+       name,
+       avatar,
+       email,
+       birthday
+
+      
     })
   }
 
@@ -79,7 +88,7 @@ const LoginModal = () => {
           <label>
             Password: <br /><input name="password" type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" />
           </label><br />
-          <button className="button-modal">Login!</button>
+          <button className="button-modal">Log in!</button>
 
         </div>
       </div>

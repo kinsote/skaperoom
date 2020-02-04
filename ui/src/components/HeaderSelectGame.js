@@ -7,7 +7,11 @@ import { NavLink } from 'react-router-dom'
 const HeaderSelectGame = () => {
 
     const dispatch = useDispatch()
-    const handleLogout = () => dispatch({ type: 'logout' })
+    const handleLogout = () => {
+        console.log('LOGOUT')
+        localStorage.removeItem('user')
+        dispatch({ type: 'logout' })
+    } 
     const user = useSelector(s=>s.user)
     return (
 

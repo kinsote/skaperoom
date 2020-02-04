@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-const Timer = ({valor, setValor}) => {
-    
+const Timer = () => {
+    const [valor, setValor] = useState(0)
     useEffect(() => {
         console.log("Start timer")
-        const t = setInterval(() => valor < 0 ? clearInterval(t) : setValor(valor--), 1000)
-        
+        const t = setInterval(() => setValor(v => v >= 0 ? v + 1 : 0), 1000)
         return () => {
-            console.log("Clear timer")
+            console.log("Clear timer", t)
+
+            //Obtener el valoir 
+            //oibterne el user del localStorage
+            //Obtener ekl valor del toimer
+            //enviar el post a /ranking (email, tiempo)
+
             clearInterval(t)
         }
     }, [])

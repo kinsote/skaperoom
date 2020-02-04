@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config()
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,6 +21,19 @@ app.use(cors());
 
 const BCRYPT_SALT_ROUNDS = 12;
 
+const createToken = () => {    
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+}
+
+const saveToken = (token) => {    
+  validTokens[token] = {
+    expires: moment().add(5, 'h'),
+    rol: 'user'
+  }
+}
+
+
+
 app.post('/registro', function (req, res, next) {
   
   const name = req.body.name;
@@ -34,7 +47,12 @@ app.post('/registro', function (req, res, next) {
       stPg.saveUser(name, hashedPassword,birthday,email,avatar)
       .then((user)=> {
         console.log('USER SAVED', req.body);
-        res.status(201).send(req.body);
+        const userCreated  = req.body;
+        const token = createToken();
+        saveToken(token);
+        userCreated.token = token;
+        delete userCreated.password;
+        res.status(201).send(userCreated);
       })
       .catch(function(error){
         res.status(400).send(error);        
@@ -47,6 +65,20 @@ app.post('/registro', function (req, res, next) {
         next();
     });
 });
+
+// app.post('/ranking', function (req, res, next) { 
+//   const user = req.body.email;
+//   const time = req.body.time;
+
+//   id userId fecha timepo
+//   email tiempo
+
+//   Guardar en base de datos
+// }
+
+// app.get('/ranking', function (req, res, next) { 
+//  //Devoilver todos los registeros de la tabla ranking ordernados por el tiempo
+// }
 
 app.post('/login', function (req, res, next) { 
   const name = req.body.name;
@@ -63,20 +95,16 @@ app.post('/login', function (req, res, next) {
       userData = user;
       return bcrypt.compare(password, user.password);
     })
-    .then(function(samePassword) { 
+    .then(function(samePassword) {
         if(!samePassword) {
             res.status(403).send();
         }
-
-        let token = createToken();
-
-        validTokens[token] = {
-          expires: moment().add(5, 'h'),
-          rol: 'user'
-        }
         
+        const token = createToken();
+        saveToken(token);
+        userData.token = token;        
         delete userData.password;
-        res.json({token, userData});
+        res.json(userData);
     })
     .catch(function(error){
         console.log("Error authenticating user: ");
@@ -90,3 +118,6 @@ const port = process.env.PORT || 8080
 app.listen(port, () => {
   console.log(`API disponible en: http://localhost:${port}`)
 })
+
+
+

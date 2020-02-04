@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import '../assets/css/User.css';
 
 
 const UserData = () => {
-    const user = useSelector(s => s.user)
-    //console.log("USER DATA", user)
+    
+    const user = JSON.parse(localStorage.getItem('user')) 
+    console.log("USER DATA", user)
 
     return (
 
