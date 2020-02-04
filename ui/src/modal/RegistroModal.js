@@ -13,7 +13,7 @@ const useFormField = () => {
 const RegistroModal = () => {
     const dispatch = useDispatch()
     const registro = (user) => dispatch({ type: 'registro', user })
-
+    
     const [name, setName] = useFormField()
     const [birthday, setBirthday] = useFormField()
     const [password, setPassword] = useFormField()
@@ -24,20 +24,19 @@ const RegistroModal = () => {
     const [isError, setError] = useState(false)
     const handleClose = () => dispatch({ type: 'hideModal' })
 
-    //const user = useSelector(s => s.user) 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
         console.log('SUBMIT', user);
-
         setError(false)
+        
         try {
+            
             const ret = await fetch('http://localhost:8080/registro', {
                 method: 'POST',
                 body: JSON.stringify(user),
                 headers: {
                     'Content-Type': 'application/json',
-                    //'Authorization': localStorage.getItem('token') //usuario.token
                 }
             })
             const data = await ret.json();

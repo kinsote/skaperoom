@@ -5,7 +5,7 @@ import '../assets/css/User.css';
 
 const UserData = () => {
     const user = useSelector(s => s.user)
-    console.log("USER DATA", user)
+    //console.log("USER DATA", user)
 
     return (
 

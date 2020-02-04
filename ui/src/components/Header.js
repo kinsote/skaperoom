@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react';//, {useEffect}
 import logo from '../assets/images/logo.png';
 import { useDispatch } from 'react-redux'
 import Modals from '../modal/Modals'
 import '../assets/css/Header.css'
-
+// useEffect(() => {
+// }, []);
 
 const Header = () => {
-
+    
     const dispatch = useDispatch()
+
     const handleRegistro = () => dispatch({ type: 'showModal', modalType: 'registro' })
     const handleLogin = () => dispatch({ type: 'showModal', modalType: 'login' })
 

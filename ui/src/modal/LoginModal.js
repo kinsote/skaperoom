@@ -10,6 +10,9 @@ const LoginModal = () => {
   const Login = (user) => dispatch({ type: 'login', user })
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+  const [email] = useState('')
+  const [avatar] = useState('')
+  const [birthday] = useState('')
 
   const history = useHistory()
   const [isError, setError] = useState(false)
@@ -30,8 +33,7 @@ const LoginModal = () => {
           //'Authorization': localStorage.getItem('token') // usuario.token
         }
       })
-      const data = await ret.json()
-      
+      const data = await ret.json()      
       //localStorage.setItem('token', data.token) // dispatch('token', data.token)
       //localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
       dispatch({ type: 'login', user: data })
@@ -50,11 +52,13 @@ const LoginModal = () => {
       alert('El usuario no esta registrado')
       console.warn('Error:', err)
       setError(true)
-    }
-    
+    } 
 
     Login({
-      name,     
+      name,
+      email,
+      avatar,
+      birthday     
     })
   }
 
@@ -75,7 +79,7 @@ const LoginModal = () => {
           <label>
             Password: <br /><input name="password" type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" />
           </label><br />
-          <button className="button-modal">Log in!</button>
+          <button className="button-modal">Login!</button>
 
         </div>
       </div>
