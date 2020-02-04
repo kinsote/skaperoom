@@ -18,8 +18,8 @@ export const quizData = [
   },
   {
     id: 4,
-    question: `cudsoai?`,
-    options1: [`ds`, `dw`, `tt`],
-    answer: `dw`
+    question: `Qué sucede con el bebe de Rosemary?`,
+    options1: [`Lo aborta inesperadamente`, `Es el hijo del diablo`, `Lo secuestran despues de nacer`],
+    answer: `Es el hijo del diablo`
   }
 ];

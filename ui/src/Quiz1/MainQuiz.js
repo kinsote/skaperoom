@@ -77,7 +77,7 @@ class MainQuiz extends React.Component {
         <div className="container-quiz1">
           <div className="App-quiz">
           <div className="result">
-            <h3>Tu puntuacion final es... {this.state.score} points </h3>
+            <h3>Tu puntuacion final es de  ...        {this.state.score} points </h3>
             <p>
               Las opciones correctas eran las siguientes:
             <ul>
@@ -122,7 +122,7 @@ class MainQuiz extends React.Component {
             {/* //adding a finish button */}
             {currentQuestion === quizData.length - 1 && (
               <button className="ui inverted button" onClick={this.finishHandler}>
-                Finish
+                Finalizar
             </button>
             )}
           </div>
