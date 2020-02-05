@@ -1,8 +1,8 @@
-import React, { useState } from 'react'; //, useEffect 
+import React, { useState } from 'react'; 
 import { useHistory } from "react-router-dom";
-import '../assets/css/Modals.css'
-import { useDispatch } from 'react-redux' //, useSelector
-import { Link } from 'react-router-dom'
+import '../assets/css/Modals.css';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const useFormField = () => {
@@ -27,7 +27,7 @@ const RegistroModal = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = { name, password, birthday, email, avatar }
-        console.log('SUBMIT', user);
+        //console.log('SUBMIT', user);
 
         setError(false)
         try {
@@ -41,7 +41,7 @@ const RegistroModal = () => {
             const data = await ret.json();
             console.log('DATA', data);
             localStorage.setItem('user', JSON.stringify(data))
-            //dispatch({ type: 'registro', user: data })
+        
             history.push(`/home`)
             handleClose()
 
@@ -51,6 +51,7 @@ const RegistroModal = () => {
             } else {
                 setError(true)
             }
+            
         } catch (err) {
             alert('El usuario ya existe');
             console.warn('Error:', err)

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch} from 'react-redux'; 
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import '../assets/css/Modals.css';
 import { Link } from 'react-router-dom';
 
 const LoginModal = () => {
-  
+
   const dispatch = useDispatch()
   const Login = (user) => dispatch({ type: 'login', user })
   const [name, setName] = useState('')
@@ -14,7 +14,7 @@ const LoginModal = () => {
   const [avatar] = useState('')
   const [birthday] = useState('')
 
-  
+
 
   const history = useHistory()
   const [isError, setError] = useState(false)
@@ -22,34 +22,32 @@ const LoginModal = () => {
   const handleClose = () => dispatch({ type: 'hideModal' })
 
 
-  const handleSubmit = async (e) => {    
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const user = { name, password }
     setError(false)
     try {
+
       const ret = await fetch('http://localhost:8080/login', {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
           'Content-Type': 'application/json',
-          //'Authorization': localStorage.getItem('token') // usuario.token
         }
       })
+
       const data = await ret.json()
       console.log("USER LOGUIN", data);
-      
-      localStorage.setItem('user', JSON.stringify(data)) // dispatch('token', data.token)
-      //localStorage.setItem('userData', JSON.stringify(data.userData)) // dispatch('userData', JSON.stringify(data.userData))
-    
-      
+
+      localStorage.setItem('user', JSON.stringify(data))
+
       dispatch({ type: 'registro', user: data })
 
       handleClose()
       history.push(`/home`)
-      
+
       if (data.success) {
-        // ok! todo bien
-        
+        // ok! todo bien        
         //data.userData       
       } else {
         // setError(true)
@@ -59,15 +57,12 @@ const LoginModal = () => {
       console.warn('Error:', err)
       setError(true)
     }
-    
 
     Login({
-       name,
-       avatar,
-       email,
-       birthday
-
-      
+      name,
+      avatar,
+      email,
+      birthday
     })
   }
 
@@ -94,7 +89,6 @@ const LoginModal = () => {
       </div>
       {isError && <div>Error, please try again</div>}
     </form>
-
   )
 }
 

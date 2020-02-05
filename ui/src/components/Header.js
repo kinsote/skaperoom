@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../assets/images/logo.png';
-import { useDispatch } from 'react-redux'
-import Modals from '../modal/Modals'
-import '../assets/css/Header.css'
+import { useDispatch } from 'react-redux';
+import Modals from '../modal/Modals';
+import '../assets/css/Header.css';
 
 
 const Header = () => {

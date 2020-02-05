@@ -17,8 +17,6 @@ const modalReducer = (state, action) => {
     default: return state || null
   }
 }
-
-
   
 const rootReducer = combineReducers({  
   user: userReducer,

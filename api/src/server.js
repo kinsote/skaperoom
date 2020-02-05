@@ -66,20 +66,6 @@ app.post('/registro', function (req, res, next) {
     });
 });
 
-// app.post('/ranking', function (req, res, next) { 
-//   const user = req.body.email;
-//   const time = req.body.time;
-
-//   id userId fecha timepo
-//   email tiempo
-
-//   Guardar en base de datos
-// }
-
-// app.get('/ranking', function (req, res, next) { 
-//  //Devoilver todos los registeros de la tabla ranking ordernados por el tiempo
-// }
-
 app.post('/login', function (req, res, next) { 
   const name = req.body.name;
   const password = req.body.password;

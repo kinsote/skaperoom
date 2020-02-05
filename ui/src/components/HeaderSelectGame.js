@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import logo from '../assets/images/logo.png';
-import '../assets/css/Header.css'
-import { NavLink } from 'react-router-dom'
+import '../assets/css/Header.css';
+import { NavLink } from 'react-router-dom';
 
 const HeaderSelectGame = () => {
 

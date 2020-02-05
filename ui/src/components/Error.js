@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/images/logo.png';
-import '../assets/css/Inicio.css'
+import '../assets/css/Inicio.css';
 
 const Error = () => {
     return (

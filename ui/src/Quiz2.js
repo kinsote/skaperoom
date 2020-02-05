@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderGame from './components/HeaderGame';
-//import Quiz2 from './Quiz2/quiz2';
+import Quiz2 from './Quiz2/quiz2';
 
 const Gameq2 = () => {
 
@@ -9,9 +9,9 @@ const Gameq2 = () => {
             <header className="header">
                 <HeaderGame />
             </header>
-            {/* <section>
+            <section>
                 <Quiz2 />
-            </section> */}
+            </section>
         </div>
     )
 }

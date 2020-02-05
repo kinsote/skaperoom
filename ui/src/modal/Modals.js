@@ -1,7 +1,7 @@
-import React from 'react'
-import { useSelector, } from 'react-redux'
-import RegistroModal from './RegistroModal'
-import LoginModal from './LoginModal'
+import React from 'react';
+import { useSelector, } from 'react-redux';
+import RegistroModal from './RegistroModal';
+import LoginModal from './LoginModal';
 
 
 const Modals = () => {

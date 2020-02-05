@@ -1,6 +1,6 @@
 import React from 'react';
-import img from '../assets/images/fondop1.jpeg'
-import audio from '../assets/audio/s1.mp3'
+import img from '../assets/images/fondop1.jpeg';
+import audio from '../assets/audio/s1.mp3';
 import '../assets/css/Inicio.css';
 
 
